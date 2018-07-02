@@ -28,7 +28,7 @@ app.set("view engine", "handlebars");
 //
 //app.use(routes);
 
-// If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
+// If deployed, use the deployed database. Otherwise use the local mongoHeadlines database on your computer
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
