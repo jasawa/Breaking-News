@@ -22,11 +22,10 @@ app.use(bodyParser.json());
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-// This was in the burgers app -- might need
-// Import routes and give the server access to them.
-//var routes = require("./controllers/burgers_controller.js");
-//
-//app.use(routes);
+// require routes
+var routes = require("./routes");
+// every request will got through routes as defined in routes folder
+app.use(routes);
 
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database on your computer
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
