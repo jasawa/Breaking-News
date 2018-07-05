@@ -11,11 +11,16 @@ var PORT = process.env.PORT || 3000;
 var app = express();
 
 // require routes
-var router = express.Router();
+//var router = express.Router();
 
-require("./routes")(router);
+//require("./routes")(router);
 //require("./routes/view")(router);
 
+// every request will got through routes
+//app.use(router);
+
+var routes = require("./routes");
+app.use(routes);
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
@@ -29,8 +34,7 @@ app.use(bodyParser.json());
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-// every request will got through routes
-app.use(router);
+
 
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database on your computer
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";

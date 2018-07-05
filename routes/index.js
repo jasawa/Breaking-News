@@ -7,4 +7,4 @@ var router = express.Router();
     //router.use("/api", apiRoutes);
     router.use("/", viewRoutes);
 //}
-module.export = router;
+module.exports = router;
