@@ -40,11 +40,12 @@ app.set("view engine", "handlebars");
 app.use(logger("dev"));
 
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database on your computer
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
-
+//var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+mongoose.connect("mongodb://heroku_6h0pjc2k:ghtrc4087gg35eb7ati2kudsbl@ds131551.mlab.com:31551/heroku_6h0pjc2k");
+  //richardkim:b3wh910w@ds233061.mlab.com:33061/heroku_b3wh9l0w”);
 // Set mongoose to leverage built in JavaScript ES6 Promises
 // Connect to the Mongo DB
-mongoose.Promise = Promise;
+//mongoose.Promise = Promise;
 //mongoose.connect(MONGODB_URI, {
 //  useMongoClient: true
 //});
